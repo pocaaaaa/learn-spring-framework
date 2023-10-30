@@ -18,3 +18,12 @@
 ### @Bean
 > * @Bean 어노테이션은 메소드가 Spring IoC 컨테이너에서 관리할 새 객체를 인스턴스화, 구성 및 초기화하는데 사용된다. 
 > * 이는 <beans/> XML configuration 과 동일한 역할을 수행함.
+
+### @Component
+> * @Component는 개발자가 직접 작성한 Class를 Bean으로 등록할 수 있도록 해주는 어노테이션.
+
+### @ComponentScan
+> * @ComponentScan은 스프링 3.1부터 도입된 어노테이션. 
+> * ComponentScan은 스프링이 직접 클래스를 검색해서 Bean으로 등록해주는 기능. 
+> * 설정 클래스에 빈으로 등록하지 않아도 원하는 클래스를 빈으로 등록할 수 있으므로 설정 코드가 크게 줄어듬. 
+> * 스프링이 검색해서 빈으로 등록할 수 있으려면 @Component 어노테이션을 붙여야 함.
