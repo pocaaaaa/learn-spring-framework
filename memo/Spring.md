@@ -18,3 +18,9 @@
 
 ### Spring Container 
 > * Spring Bean과 수명 주기를 관리
+
+### DI
+> * 
+
+### IOC
+> *
