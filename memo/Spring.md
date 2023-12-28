@@ -19,9 +19,16 @@
 ### Spring Container 
 > * Spring Bean과 수명 주기를 관리
 
-### DI
-> * 
+### DI (Dependency Injection)
+> * 의존성 주입(DI)은 객체를 직접 생성하지 않고 외부에서 가져와 사용하는 것. 
+> * 직접 new 명령어를 사용하여 객체를 생성하지 않고, Spring의 DI 컨테이너가 관리. 
 
-### IOC
-> *
+### IOC (Inversion Of Control)
+> * 제어의 반전. 
+> * 제어권을 컨테이너 (프레임워크)가 가져간다는 뜻. 
+> * 컨테이너(프레임워크)가 객체를 관리하고 객체의 생성을 책임지고, 의존성을 관리.
  
+### CDI (Contextx and Dependency Injection)
+> * 의존성 주입 (DI)을 자바 EE로 가져오는 자바 EE의 시도로 CDI의 목적은 의존성 주입 (DI) 수행 방법의 기본 표준화하는 것. 
+> * CDI를 사용하기 위해서는 javax.inject 라이브러리를 사용. 
+> * @Inject, @Named, @Singleton, @Qualifier 등을 사용.
