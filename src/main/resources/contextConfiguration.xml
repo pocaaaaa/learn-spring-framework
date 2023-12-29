@@ -4,4 +4,17 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+    <bean id="name" class="java.lang.String">
+        <constructor-arg value="Ranga" />
+    </bean>
+    <bean id="age" class="java.lang.Integer">
+        <constructor-arg value="35" />
+    </bean>
+
+<!--    <context:component-scan base-package="com.in28minutes.learnspringframework2.game" />-->
+
+    <bean id="game" class="com.in28minutes.learnspringframework2.game.PacmanGame"/>
+    <bean id="gamRunner" class="com.in28minutes.learnspringframework2.game.GameRunner">
+        <constructor-arg ref="game" />
+    </bean>
 </beans>

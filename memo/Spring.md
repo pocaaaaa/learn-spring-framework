@@ -22,6 +22,7 @@
 ### DI (Dependency Injection)
 > * 의존성 주입(DI)은 객체를 직접 생성하지 않고 외부에서 가져와 사용하는 것. 
 > * 직접 new 명령어를 사용하여 객체를 생성하지 않고, Spring의 DI 컨테이너가 관리. 
+> * Constr injection (생성자 주입), Setter injection (세터 주입), Field injection (필드 주입)
 
 ### IOC (Inversion Of Control)
 > * 제어의 반전. 
@@ -32,3 +33,5 @@
 > * 의존성 주입 (DI)을 자바 EE로 가져오는 자바 EE의 시도로 CDI의 목적은 의존성 주입 (DI) 수행 방법의 기본 표준화하는 것. 
 > * CDI를 사용하기 위해서는 javax.inject 라이브러리를 사용. 
 > * @Inject, @Named, @Singleton, @Qualifier 등을 사용.
+
+### Auto-wiring

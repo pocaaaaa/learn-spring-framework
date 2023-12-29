@@ -63,3 +63,31 @@
 > 5) GlobalSession : <br/>
 > GlobalSession 스코프는 Portlet 환경에서 사용됨. <br/>
 > Portlet 애플리케이션 전체에서 공유할 수 있는 빈 객체를 생성 <br/>
+
+### @Controller
+> * 웹 애플리케이션과 REST API에서 컨트롤러를 정의하는데 사용.
+
+### @Service
+> * 보통 어노테이션한 클래스에 비지니스 논리가 있음을 나타냄. 
+> * 클래스에 비지니스 논리가 있다면 @Component 대신 @Service를 사용. 
+
+### @Repository
+> * Bean이 데이터베이스와 통신하는 경우, 데이터를 저장하거나 검색하거나 조작하는 경우 @Component 대신 @Repository 어노테이션을 클래스에 사용.
+
+### 스트레오타입 어노테이션 
+> * @Component, @Service, @Controller, @Repository
+> * 비즈니스 논리를 포함한 클래스를 만들 때는 @Service
+> * 웹 컨트롤러 클래스를 만들 때는 @Controller 
+> * 데이터베이스와 통신하는 클래스를 만들 때는 @Repository
+> * 모두 해당하지 않을 때는 제네릭 어노테이션인 @Component 사용.
+> * 구체적인 어노테이션을 사용하는게 좋음.
+> <br/> 1) 구체적인 어노테이션을 사용하면 프레임워크에 자신이 의도했던 바를 더 자세히 나타낼 수 있음. 
+> <br/> 2) 나중에 AOP (관점 지향 프로그래밍)를 사용하여 어노테이션을 감지하고 그 위에 부가적인 동작을 추가할 수 있음. 
+
+### @PostConstruct
+
+### @PreDestroy
+
+### @Named
+
+### @Inject
