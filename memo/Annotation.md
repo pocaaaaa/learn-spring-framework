@@ -85,9 +85,16 @@
 > <br/> 2) 나중에 AOP (관점 지향 프로그래밍)를 사용하여 어노테이션을 감지하고 그 위에 부가적인 동작을 추가할 수 있음. 
 
 ### @PostConstruct
+> * @PostConstruct 는 WAS 가 뜰 때 bean이 생성된 다음 딱 한번만 실행됨.
+> * @PostConstruct 를 사용하여 기본 사용자라던가, 딱 한번만 등록하면 되는 key 값 등을 등록하여 사용할 수 있음.
 
 ### @PreDestroy
+> * @PreDestroy 역시 Spring이 애플리케이션 컨텍스트에서 bean을 제거하기 직전에 단 한 번만 실행됨.
 
 ### @Named
+> * @Autowired의 @Qualifier 와 비슷한 역할을 하는게 @Inject에서의 @Named. 
+> * @Qualifier와 달리 @Named에는 bean id 을 지정하므로 @Autowired, @Qualifier를 사용할때에 비해 XML 설정 파일이 다소 짧아진다는 특징이 있음. 
 
 ### @Inject
+> * @Inject는 @Autowired와 유사하게 주입하려고 하는 객체의 타입이 일치하는 객체를 자동으로 주입. 
+> * @Autowired와 마찬가지로 필드, Setter에 사용할 경우 반드시 기본 생성자가 정의되어 있어야 함.

@@ -35,3 +35,7 @@
 > * @Inject, @Named, @Singleton, @Qualifier 등을 사용.
 
 ### Auto-wiring
+> * DI를 명시적으로 설정하지 않아도 container가 bean의 타입이나 이름을 이용하여 DI를 자동으로 수행하는 기능.
+
+### 스프링 빈 생명주기 (Bean LifeCycle)
+> * 스프링 컨테이너 생성  ->  스프링 빈 생성  ->  의존 관계 주입  ->  초기화 콜백  ->  사용  ->  소멸 콜백  ->  스프링 종료
