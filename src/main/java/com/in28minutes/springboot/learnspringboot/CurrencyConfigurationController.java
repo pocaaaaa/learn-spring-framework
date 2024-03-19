@@ -11,10 +11,10 @@ import java.util.List;
 public class CurrencyConfigurationController {
 
     @Autowired
-    private CurrencyServiceCongifuration configuration;
+    private CurrencyServiceConfiguration configuration;
 
     @RequestMapping("/currency-configuration")
-    public CurrencyServiceCongifuration retrieveAllCourses() {
+    public CurrencyServiceConfiguration retrieveAllCourses() {
         return configuration;
     }
 }
