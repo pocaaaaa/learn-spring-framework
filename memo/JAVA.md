@@ -19,3 +19,7 @@
 > * 또 만약 리소스 객체가 한 개가 아니라 여러 개라면 개발자의 코드 관리포인트가 늘어나기 때문에 누락이 될 가능성이 높음.
 > * 위의 위험성을 방지하고자 try-catch 문 안에서 AutoCloseable 인터페이스를 상속받은 리소스라면 자동으로 자원해제를 해줌. 
 > * try(Scanner sc = new Scanner(new File("test"))) { // 코드 } catch (FileNotFoundException e) { // 오류 }
+
+### """
+> * Java 15 텍스트 블록 기능
+> * 텍스트 블록 내에서 줄 바꿈을 이스케이프할 필요 없이 줄 바꿈과 따옴표를 자유롭게 사용.

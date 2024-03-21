@@ -101,3 +101,28 @@
 
 ### @ConfigurationProperties
 > * *.properties, *.yml 파일에 있는 property를 자바 클래스에 값을 가져와서 (바인딩) 사용할 수 있게 해주는 어노테이션
+
+### @Entity
+> * @Entity 어노테이션은 JPA를 사용해 테이블과 매핑할 클래스에 붙여주는 어노테이션.
+> * 이 어노테이션을 붙임으로써 JPA가 해당 클래스를 관리.
+
+### @Id / @Column
+> * @Id는 특정 속성을 기본키로 설정하는 어노테이션이다.
+> * @Column은 객체 필드를 테이블 컬럼과 매핑한다.
+
+### @Transactional
+> * 소스코드에 직접 트랜잭션 관련 로직을 넣어두지 않고 비지니스 로직에서 완전히 분리하는 방식이다.
+> * 이 방식을 사용하면 프로그래밍에 의한 트랜잭션에서 나온 단점인 트랜잭션 코드 중복 문제, 소스코드 유지보수의 문제를 모두 해결할 수 있다.
+
+### @PersistenceContext
+> * EntityManager를 빈으로 주입할 때 사용하는 어노테이션.
+
+### @SpringBootApplication
+> * Application 클래스에 쓰는 어노테이션으로, @SpringBootApplication으로 인해 스프링 부트의 자동 설정, 스프링 Bean 읽기와 생성을 모두 자동으로 설정. 
+> * 특히나 @SpringBootApplication이 있는 위치부터 설정을 읽어가기 때문에 이 클래스는 항상 프로젝트의 최상단에 위치 해야만 함.
+
+### @Controller
+
+### @RequestMapping
+
+### @ResponseBody

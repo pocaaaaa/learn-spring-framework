@@ -42,3 +42,10 @@
 
 ### Logging Level 
 > * trace, debug, info, warning, error, off
+
+### JPA / Hibernate
+> * JPA란 자바 ORM(Object Relational Mapping) 기술에 대한 API 표준 명세를 의미. 
+> * JPA는 특정 기능을 하는 라이브러리가 아니고, ORM을 사용하기 위한 인터페이스를 모아둔 것.
+> * JPA를 사용하기 위해서는 JPA를 구현한 Hibernate, EcpliseLink, DataNucleus 같은 ORM 프레임워크를 사용해야 함.
+> * Hibernate는 JPA의 구현체 중 하나.
+> * Hibernate는 SQL을 사용하지 않고 직관적인 코드(메소드)를 사용해 데이터를 조작할 수 있음.
