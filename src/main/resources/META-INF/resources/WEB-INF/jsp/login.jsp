@@ -4,6 +4,11 @@
     <title>Login Page</title>
 </head>
 <body>
-    Welcome to toe login page ${name}!
+    Welcome to toe login page!
+    <form method="post">
+        Name: <input type="text" name="name">
+        Password: <input type="password" name="password">
+        <input type="submit">
+    </form>
 </body>
 </html>
