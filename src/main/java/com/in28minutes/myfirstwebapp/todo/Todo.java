@@ -6,19 +6,19 @@ import java.time.LocalDate;
 // Static List of todos => Database (H2, MySQL)
 
 public class Todo {
-    public Todo(int id, String username, String description, LocalDate targetDate, boolean completed) {
+    public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
         this.id = id;
         this.username = username;
         this.description = description;
         this.targetDate = targetDate;
-        this.completed = completed;
+        this.done = done;
     }
 
     private int id;
     private String username;
     private String description;
     private LocalDate targetDate;
-    private boolean completed;
+    private boolean done;
 
     @Override
     public String toString() {
@@ -27,7 +27,7 @@ public class Todo {
                 ", username='" + username + '\'' +
                 ", description='" + description + '\'' +
                 ", targetDate=" + targetDate +
-                ", completed=" + completed +
+                ", done=" + done +
                 '}';
     }
 
@@ -63,11 +63,11 @@ public class Todo {
         this.targetDate = targetDate;
     }
 
-    public boolean isCompleted() {
-        return completed;
+    public boolean isDone() {
+        return done;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }
