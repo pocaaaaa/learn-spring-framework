@@ -44,3 +44,7 @@
 ### Prediccate: Interface
 
 ### removeIf
+
+### equalsIgnoreCase
+
+> 대소문자 구분하지 않고 문자열 비교
