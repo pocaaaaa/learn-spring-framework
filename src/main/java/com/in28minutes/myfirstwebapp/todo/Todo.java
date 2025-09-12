@@ -1,5 +1,6 @@
 package com.in28minutes.myfirstwebapp.todo;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -7,7 +8,15 @@ import java.time.LocalDate;
 // Database (MySQL)
 // Static List of todos => Database (H2, MySQL)
 
+// JPA
+//  Bean -> Database Table
+
+@Entity
 public class Todo {
+
+    public Todo() {
+    }
+
     public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
         this.id = id;
         this.username = username;
@@ -16,6 +25,8 @@ public class Todo {
         this.done = done;
     }
 
+    @Id
+    @GeneratedValue
     private int id;
     private String username;
 
