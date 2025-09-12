@@ -1,0 +1,19 @@
+<!-- jQuery 링크 -->
+<script src="/webjars/jquery/4.0.0-beta.2/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    // jQuery 3.3 이상에서 제거된 function 재정의
+    if (typeof $.isArray !== "function") {
+        $.isArray = Array.isArray;
+    }
+
+    if (typeof $.isFunction !== "function") {
+        $.isFunction = function (obj) {
+            return typeof obj === "function";
+        };
+    }
+</script>
+<!-- bootstrap 링크 -->
+<script src="/webjars/bootstrap/5.3.3/dist/js/bootstrap.bundle.js"></script>
+<script src="/webjars/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+</body>
+</html>

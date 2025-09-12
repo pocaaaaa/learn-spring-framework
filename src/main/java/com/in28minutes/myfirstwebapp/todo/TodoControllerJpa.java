@@ -6,34 +6,33 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.NoSuchElementException;
 
-//@Controller
+@Controller
 @SessionAttributes("name")
-public class TodoController {
+public class TodoControllerJpa {
 
-    public TodoController(TodoService todoService) {
+    public TodoControllerJpa(TodoRepository todoRepository) {
         super();
-        this.todoService = todoService;
+        this.todoRepository = todoRepository;
     }
 
-    private TodoService todoService;
+    private TodoRepository todoRepository;
+    private String redirectList = "redirect:list-todos";
 
     @RequestMapping("list-todos")
     public String listAllTodos(ModelMap model) {
         String userName = getLoggedInUserName(model);
-        List<Todo> todos = todoService.findByUsername(userName);
+        List<Todo> todos = todoRepository.findByUsername(userName);
         model.addAttribute("todos", todos);
         return "listTodos";
     }
 
-    @RequestMapping(value = "add-todo", method = RequestMethod.GET)
+    @GetMapping(value = "add-todo")
     public String showNewTodoPage(ModelMap model) {
         String userName = getLoggedInUserName(model);
         Todo todo = new Todo(0, userName, "", LocalDate.now().plusYears(1), false);
@@ -41,7 +40,7 @@ public class TodoController {
         return "todo";
     }
 
-    @RequestMapping(value = "add-todo", method = RequestMethod.POST)
+    @PostMapping(value = "add-todo")
     public String addNewTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 
         if (result.hasErrors()) {
@@ -49,24 +48,25 @@ public class TodoController {
         }
 
         String userName = getLoggedInUserName(model);
-        todoService.addTodo(userName, todo.getDescription(), todo.getTargetDate(), false);
-        return "redirect:list-todos";
+        todo.setUsername(userName);
+        todoRepository.save(todo);
+        return redirectList;
     }
 
     @RequestMapping("delete-todo")
     public String deleteTodo(@RequestParam int id) {
-        todoService.deleteById(id);
-        return "redirect:list-todos";
+        todoRepository.deleteById(id);
+        return redirectList;
     }
 
-    @RequestMapping(value = "update-todo", method = RequestMethod.GET)
+    @GetMapping(value = "update-todo")
     public String showUpdateTodoPage(@RequestParam int id, ModelMap model) {
-        Todo todo = todoService.findById(id);
+        Todo todo = todoRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Todo with ID " + id + " not found."));
         model.addAttribute("todo", todo);
         return "todo";
     }
 
-    @RequestMapping(value = "update-todo", method = RequestMethod.POST)
+    @PostMapping(value = "update-todo")
     public String updateTodo(ModelMap model, @Valid Todo todo, BindingResult result) {
 
         if (result.hasErrors()) {
@@ -75,8 +75,8 @@ public class TodoController {
 
         String username = getLoggedInUserName(model);
         todo.setUsername(username);
-        todoService.updateTodo(todo);
-        return "redirect:list-todos";
+        todoRepository.save(todo);
+        return redirectList;
     }
 
     private String getLoggedInUserName(ModelMap model) {
